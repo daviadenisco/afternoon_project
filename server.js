@@ -3,7 +3,7 @@ const express = require('express');
 const PORT = process.env.PORT || 5150;
 const app = express();
 
-app.use(express.static('/public'));
+app.use(express.static('public'));
 
 app.set('view engine', 'ejs');
 
@@ -12,14 +12,15 @@ app.get('/', (req, res) => {
 });
 
 app.get('/about', (req, res) => {
-  res.send('this is the about page');
+  res.render('about');
 });
+
 app.get('/contact', (req, res) => {
-  res.send('this is the contact page');
+  res.render('contact');
 });
 
 app.get('/subscribe', (req, res) => {
-  res.send('Please subscribe to this page');
+  res.send('subscribe');
 });
 
 app.listen(PORT, () => {
