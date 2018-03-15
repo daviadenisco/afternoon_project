@@ -20,7 +20,7 @@ app.get('/contact', (req, res) => {
 });
 
 app.get('/subscribe', (req, res) => {
-  res.send('subscribe');
+  res.render('subscribe');
 });
 
 app.listen(PORT, () => {
